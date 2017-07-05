@@ -106,15 +106,15 @@ class RecipeCard extends Component {
               <Icon
                 name={'heart'}
                 color={isFavourite ? '#e20404' : '#517fa4'}
-                type={'evilicon'}
+                type={'font-awesome'}
               />
             </TouchableOpacity>
           }
           <TouchableOpacity>
-            <Icon name={'retweet'} type={'evilicon'} color={'#517fa4'} />
+            <Icon name={'share-square-o'} type={'font-awesome'} color={'#517fa4'} />
           </TouchableOpacity>
           <TouchableOpacity>
-            <Icon name={'comment'} type={'evilicon'} color={'#517fa4'} />
+            <Icon name={'comment'} type={'font-awesome'} color={'#517fa4'} />
           </TouchableOpacity>
         </View>
       </Card>
