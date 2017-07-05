@@ -28,13 +28,13 @@ const styles = StyleSheet.create({
     right: 0,
   },
   buttonGroup: {
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 5,
-    marginTop: 5,
+    marginLeft: 0,
+    marginRight: 0,
+    marginBottom: 0,
+    marginTop: 0,
     flexDirection: 'row',
     overflow: 'hidden',
-    height: 40,
+    height: 30,
     justifyContent: 'space-between',
   },
 });
