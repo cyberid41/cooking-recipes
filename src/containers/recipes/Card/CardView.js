@@ -12,7 +12,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { Icon } from 'react-native-elements';
+import { Icon, Button, Divider, ButtonGroup } from 'react-native-elements';
 
 // Consts and Libs
 import { AppStyles } from '@theme/';
@@ -26,6 +26,25 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -45,
     right: 0,
+  },
+  button: {
+    borderRadius: 0,
+    marginLeft: 0,
+    marginBottom: 0,
+    marginRight: 0,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 10,
+  },
+  buttonGroup: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 5,
+    marginTop: 5,
+    flexDirection: 'row',
+    overflow: 'hidden',
+    height: 40,
+    justifyContent: 'space-between',
   },
 });
 
@@ -50,33 +69,55 @@ class RecipeCard extends Component {
 
   render = () => {
     const { title, body, image, onPress, onPressFavourite, isFavourite } = this.props;
-
     return (
-      <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
-        <Card image={image && { uri: image }}>
-          <View style={[AppStyles.paddingBottomSml]}>
-            <Text h3>{title}</Text>
-            <Text>{body}</Text>
+      <Card image={image && { uri: image }} >
+        <View style={[AppStyles.paddingTextCard]}>
+          <Text h3 onPress={onPress}>{title}</Text>
+          <Text>{body}</Text>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={[styles.favourite]}
+          >
+            <Icon
+              raised
+              name={'account-circle'}
+              containerStyle={{
+                backgroundColor: '#FFFFFF',
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+        <Button
+          icon={{ name: 'code' }}
+          backgroundColor={'#03A9F4'}
+          fontFamily={'Lato'}
+          onPress={onPress}
+          title={'Lihat selengkapnya'}
+        />
 
-            {!!onPressFavourite &&
-              <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={onPressFavourite}
-                style={[styles.favourite]}
-              >
-                <Icon
-                  raised
-                  name={'star-border'}
-                  color={isFavourite ? '#FFFFFF' : '#FDC12D'}
-                  containerStyle={{
-                    backgroundColor: isFavourite ? '#FDC12D' : '#FFFFFF',
-                  }}
-                />
-              </TouchableOpacity>
-            }
-          </View>
-        </Card>
-      </TouchableOpacity>
+        <Divider style={{ backgroundColor: '#517fa4', marginBottom: 10, marginTop: 10 }} />
+        <View
+          style={[styles.buttonGroup]}
+        >
+          {!!onPressFavourite &&
+            <TouchableOpacity
+              onPress={onPressFavourite}
+            >
+              <Icon
+                name={'heart'}
+                color={isFavourite ? '#e20404' : '#517fa4'}
+                type={'evilicon'}
+              />
+            </TouchableOpacity>
+          }
+          <TouchableOpacity>
+            <Icon name={'retweet'} type={'evilicon'} color={'#517fa4'} />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Icon name={'comment'} type={'evilicon'} color={'#517fa4'} />
+          </TouchableOpacity>
+        </View>
+      </Card>
     );
   }
 }
