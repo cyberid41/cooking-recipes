@@ -245,65 +245,71 @@ class AuthForm extends Component {
     const Form = FormValidation.form.Form;
 
     return (
-
-      <KeyboardAvoidingView
-        behavior="padding"
-        style={{ flex: 1 }}
+      <ScrollView
+        automaticallyAdjustContentInsets={false}
+        ref={(a) => { this.scrollView = a; }}
+        style={[AppStyles.container]}
+        contentContainerStyle={[AppStyles.container]}
       >
-        <Card>
-          <Alerts
-            status={this.state.resultMsg.status}
-            success={this.state.resultMsg.success}
-            error={this.state.resultMsg.error}
-          />
+        <KeyboardAvoidingView
+          behavior="padding"
+          style={{ flex: 1 }}
+        >
+          <Card>
+            <Alerts
+              status={this.state.resultMsg.status}
+              success={this.state.resultMsg.success}
+              error={this.state.resultMsg.error}
+            />
 
-          {(!!this.props.introTitle || !!this.props.introText) &&
-            <View>
-              {!!this.props.introTitle &&
-                <Text h1>{this.props.introTitle}</Text>
-              }
-              {!!this.props.introText &&
-                <Text>{this.props.introText}</Text>
-              }
+            {(!!this.props.introTitle || !!this.props.introText) &&
+              <View>
+                {!!this.props.introTitle &&
+                  <Text h1>{this.props.introTitle}</Text>
+                }
+                {!!this.props.introText &&
+                  <Text>{this.props.introText}</Text>
+                }
 
-              <Spacer size={10} />
-            </View>
-          }
+                <Spacer size={10} />
+              </View>
+            }
 
-          <Form
-            ref={(b) => { this.form = b; }}
-            type={this.state.form_fields}
-            value={this.state.form_values}
-            options={this.state.options}
-          />
+            <Form
+              ref={(b) => { this.form = b; }}
+              type={this.state.form_fields}
+              value={this.state.form_values}
+              options={this.state.options}
+            />
 
-          <Spacer size={20} />
+            <Spacer size={20} />
 
-          <Button title={this.props.buttonTitle} onPress={this.handleSubmit} />
+            <Button title={this.props.buttonTitle} onPress={this.handleSubmit} />
 
-          <Spacer size={10} />
+            <Spacer size={10} />
 
-          {this.props.formType === 'login' &&
-            <View>
-              <TouchableOpacity onPress={Actions.passwordReset}>
-                <Text p style={[AppStyles.textCenterAligned, AppStyles.link]}>
-                  Forgot Password
+            {this.props.formType === 'login' &&
+              <View>
+                <TouchableOpacity onPress={Actions.passwordReset}>
+                  <Text p style={[AppStyles.textCenterAligned, AppStyles.link]}>
+                    Forgot Password
                 </Text>
-              </TouchableOpacity>
+                </TouchableOpacity>
 
-              <Spacer size={10} />
+                <Spacer size={10} />
 
-              <Text p style={[AppStyles.textCenterAligned]}>
-                - or -
+                <Text p style={[AppStyles.textCenterAligned]}>
+                  - or -
               </Text>
 
-              <Button outlined title={'Sign Up'} onPress={Actions.signUp} />
-            </View>
-          }
-        </Card>
+                <Button outlined title={'Sign Up'} onPress={Actions.signUp} />
+              </View>
+            }
+          </Card>
 
-        <Spacer size={60} />
-      </KeyboardAvoidingView>
+          <Spacer size={60} />
+        </KeyboardAvoidingView>
+      </ScrollView>
     );
   }
 }
