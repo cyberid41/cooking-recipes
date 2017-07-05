@@ -182,6 +182,18 @@ export default {
   paddingBottomSml: {
     paddingBottom: Sizes.paddingSml,
   },
+  paddingTextCard: {
+    paddingBottom: Sizes.paddingTextBottom,
+    paddingLeft: Sizes.paddingTextLeft,
+    paddingTop: Sizes.paddingTop,
+    paddingRight: Sizes.padingTextRight,
+  },
+  paddingButtonCard: {
+    paddingBottom: Sizes.paddingTextBottom,
+    paddingLeft: Sizes.paddingTextLeft,
+    paddingTop: Sizes.paddingTop,
+    paddingRight: Sizes.padingTextRight,
+  },
 
   // General HTML-like Elements
   hr: {

@@ -28,6 +28,14 @@ export default {
 
   padding: 20,
   paddingSml: 10,
+  paddingTextLeft: 10,
+  paddingTextRight: 10,
+  paddingTextBottom: 10,
+  paddingTextTop: 10,
+  paddingButtonLeft: 10,
+  paddingButtonRight: 10,
+  paddingButtonBottom: 10,
+  paddingButtonTop: 10,
 
   borderRadius: 2,
 };
