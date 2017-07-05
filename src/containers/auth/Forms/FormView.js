@@ -11,6 +11,7 @@ import {
   ScrollView,
   AsyncStorage,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 import FormValidation from 'tcomb-form-native';
 import { Actions } from 'react-native-router-flux';
@@ -244,11 +245,10 @@ class AuthForm extends Component {
     const Form = FormValidation.form.Form;
 
     return (
-      <ScrollView
-        automaticallyAdjustContentInsets={false}
-        ref={(a) => { this.scrollView = a; }}
-        style={[AppStyles.container]}
-        contentContainerStyle={[AppStyles.container]}
+
+      <KeyboardAvoidingView
+        behavior="padding"
+        style={{ flex: 1 }}
       >
         <Card>
           <Alerts
@@ -303,7 +303,7 @@ class AuthForm extends Component {
         </Card>
 
         <Spacer size={60} />
-      </ScrollView>
+      </KeyboardAvoidingView>
     );
   }
 }
