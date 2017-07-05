@@ -61,16 +61,17 @@ class AppLaunch extends Component {
 
   render = () => (
     <View style={[AppStyles.container]}>
-      <Image
-        source={require('../../images/launch.jpg')}
-        style={[styles.launchImage, AppStyles.containerCentered]}
-      >
-        <ActivityIndicator
-          animating
-          size={'large'}
-          color={'#C1C5C8'}
-        />
-      </Image>
+      <ActivityIndicator
+        animating
+        size={'large'}
+        color={'#C1C5C8'}
+        style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      />
     </View>
   );
 }
