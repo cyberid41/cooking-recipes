@@ -27,15 +27,6 @@ const styles = StyleSheet.create({
     top: -45,
     right: 0,
   },
-  button: {
-    borderRadius: 0,
-    marginLeft: 0,
-    marginBottom: 0,
-    marginRight: 0,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 10,
-  },
   buttonGroup: {
     marginLeft: 10,
     marginRight: 10,
@@ -72,7 +63,7 @@ class RecipeCard extends Component {
     return (
       <Card image={image && { uri: image }} >
         <View style={[AppStyles.paddingTextCard]}>
-          <Text h3 onPress={onPress}>{title}</Text>
+          <Text h3 onPress={onPress} style={{ textDecorationLine: 'none' }}>{title}</Text>
           <Text>{body}</Text>
           <TouchableOpacity
             activeOpacity={0.8}
@@ -87,13 +78,6 @@ class RecipeCard extends Component {
             />
           </TouchableOpacity>
         </View>
-        <Button
-          icon={{ name: 'code' }}
-          backgroundColor={'#03A9F4'}
-          fontFamily={'Lato'}
-          onPress={onPress}
-          title={'Lihat selengkapnya'}
-        />
 
         <Divider style={{ backgroundColor: '#517fa4', marginBottom: 10, marginTop: 10 }} />
         <View
