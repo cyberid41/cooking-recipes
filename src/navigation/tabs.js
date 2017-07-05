@@ -17,6 +17,8 @@ import { NavbarMenuButton } from '@containers/ui/NavbarMenuButton/NavbarMenuButt
 
 // Scenes
 import Placeholder from '@components/general/Placeholder';
+import Timeline from '@components/general/Timeline';
+import CreateStory from '@components/general/CreateStory';
 import Error from '@components/general/Error';
 import StyleGuide from '@containers/StyleGuideView';
 import Recipes from '@containers/recipes/Browse/BrowseContainer';
@@ -59,10 +61,19 @@ const scenes = (
     <Scene
       key={'timeline'}
       {...navbarPropsTabs}
-      title={'Coming Soon'}
-      component={Placeholder}
+      title={'Timeline'}
+      component={Timeline}
       icon={props => TabIcon({ ...props, icon: 'timeline' })}
-      analyticsDesc={'Placeholder: Coming Soon'}
+      analyticsDesc={'Placeholder: Timeline'}
+    />
+
+    <Scene
+      key={'story'}
+      {...navbarPropsTabs}
+      title={'Create Story'}
+      component={CreateStory}
+      icon={props => TabIcon({ ...props, icon: 'add-a-photo' })}
+      analyticsDesc={'Placeholder: Create Story'}
     />
 
     <Scene
