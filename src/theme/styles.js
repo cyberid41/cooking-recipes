@@ -26,8 +26,6 @@ export default {
     flex: 1,
     flexDirection: 'column',
     backgroundColor: Colors.background,
-    margin: 0,
-    marginBottom: 4,
   },
   containerCentered: {
     justifyContent: 'center',
