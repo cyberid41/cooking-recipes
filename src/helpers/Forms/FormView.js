@@ -36,7 +36,7 @@ class AuthForm extends Component {
     }),
     submit: PropTypes.func,
     onSuccessfulSubmit: PropTypes.func,
-    formType: PropTypes.oneOf(['login', 'signUp', 'passwordReset', 'updateProfile']),
+    formType: PropTypes.oneOf(['login', 'signUp', 'passwordReset', 'updateProfile', 'createRecipe']),
     formFields: PropTypes.arrayOf(PropTypes.string),
     buttonTitle: PropTypes.string,
     successMessage: PropTypes.string,
@@ -66,6 +66,11 @@ class AuthForm extends Component {
     if (props.formFields.indexOf('ConfirmPassword') > -1) formFields.ConfirmPassword = this.validPassword;
     if (props.formFields.indexOf('FirstName') > -1) formFields.FirstName = FormValidation.String;
     if (props.formFields.indexOf('LastName') > -1) formFields.LastName = FormValidation.String;
+    if (props.formFields.indexOf('Title') > -1) formFields.Title = FormValidation.String;
+    if (props.formFields.indexOf('Body') > -1) formFields.Body = FormValidation.String;
+    if (props.formFields.indexOf('Category') > -1) formFields.Category = FormValidation.String;
+    if (props.formFields.indexOf('Ingredients') > -1) formFields.Ingredients = FormValidation.String;
+    if (props.formFields.indexOf('Method') > -1) formFields.Method = FormValidation.String;
 
     this.state = {
       resultMsg: {
@@ -107,6 +112,31 @@ class AuthForm extends Component {
           LastName: {
             template: TcombTextInput,
             error: 'Please enter your first name',
+            clearButtonMode: 'while-editing',
+          },
+          Title: {
+            template: TcombTextInput,
+            error: 'Please enter your title',
+            clearButtonMode: 'while-editing',
+          },
+          Body: {
+            template: TcombTextInput,
+            error: 'Please enter your body',
+            clearButtonMode: 'while-editing',
+          },
+          Category: {
+            template: TcombTextInput,
+            error: 'Please enter your category',
+            clearButtonMode: 'while-editing',
+          },
+          Ingredients: {
+            template: TcombTextInput,
+            error: 'Please enter your ingredients',
+            clearButtonMode: 'while-editing',
+          },
+          Method: {
+            template: TcombTextInput,
+            error: 'Please enter your method',
             clearButtonMode: 'while-editing',
           },
         },
@@ -248,8 +278,7 @@ class AuthForm extends Component {
       <ScrollView
         automaticallyAdjustContentInsets={false}
         ref={(a) => { this.scrollView = a; }}
-        style={[AppStyles.container]}
-        contentContainerStyle={[AppStyles.container]}
+        style={[AppStyles.formContainer]}
       >
         <KeyboardAvoidingView
           behavior="padding"
@@ -306,7 +335,6 @@ class AuthForm extends Component {
               </View>
             }
           </Card>
-
           <Spacer size={60} />
         </KeyboardAvoidingView>
       </ScrollView>

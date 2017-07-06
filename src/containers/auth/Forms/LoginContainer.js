@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import * as UserActions from '@redux/user/actions';
 
 // The component we're mapping to
-import FormRender from './FormView';
+import FormRender from '@helpers/Forms/FormView';
 
 // What data from the store shall we send to the component?
 const mapStateToProps = state => ({

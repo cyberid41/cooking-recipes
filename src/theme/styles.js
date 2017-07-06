@@ -21,6 +21,12 @@ export default {
     flexDirection: 'column',
     backgroundColor: Colors.background,
   },
+  formContainer: {
+    position: 'relative',
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: Colors.background,
+  },
   containerCentered: {
     justifyContent: 'center',
     alignItems: 'center',

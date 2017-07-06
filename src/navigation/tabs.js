@@ -16,9 +16,8 @@ import { TabIcon } from '@ui/';
 import { NavbarMenuButton } from '@containers/ui/NavbarMenuButton/NavbarMenuButtonContainer';
 
 // Scenes
-import Placeholder from '@components/general/Placeholder';
 import Timeline from '@components/general/Timeline';
-import CreateStory from '@components/general/CreateStory';
+import CreateRecipe from '@containers/create/CreateRecipe';
 import Error from '@components/general/Error';
 import StyleGuide from '@containers/StyleGuideView';
 import Recipes from '@containers/recipes/Browse/BrowseContainer';
@@ -71,7 +70,7 @@ const scenes = (
       key={'story'}
       {...navbarPropsTabs}
       title={'Create Story'}
-      component={CreateStory}
+      component={CreateRecipe}
       icon={props => TabIcon({ ...props, icon: 'add-a-photo' })}
       analyticsDesc={'Placeholder: Create Story'}
     />
