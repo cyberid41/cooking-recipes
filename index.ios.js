@@ -9,4 +9,4 @@
 import { AppRegistry } from 'react-native';
 import AppContainer from './src/';
 
-AppRegistry.registerComponent('ElochoShop', () => AppContainer);
+AppRegistry.registerComponent('CookingRecipes', () => AppContainer);

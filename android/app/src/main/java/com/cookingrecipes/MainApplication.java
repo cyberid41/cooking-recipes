@@ -1,4 +1,4 @@
-package com.elochoshop;
+package com.cookingrecipes;
 
 import android.app.Application;
 import android.util.Log;
