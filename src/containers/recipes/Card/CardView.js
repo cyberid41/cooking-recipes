@@ -12,7 +12,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import { Icon, Button, Divider, ButtonGroup } from 'react-native-elements';
+import { Icon, Divider } from 'react-native-elements';
 
 // Consts and Libs
 import { AppStyles } from '@theme/';
