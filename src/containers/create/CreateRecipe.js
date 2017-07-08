@@ -7,7 +7,7 @@
 import { connect } from 'react-redux';
 
 // Actions
-import * as UserActions from '@redux/user/actions';
+import * as CreateRecipeActions from '@redux/createrecipe/actions';
 
 // The component we're mapping to
 import FormRender from '@helpers/Forms/FormView';
@@ -23,8 +23,7 @@ const mapStateToProps = state => ({
 
 // Any actions to map to the component?
 const mapDispatchToProps = {
-  submit: UserActions.signUp,
-  onSuccessfulSubmit: UserActions.login,
+  submit: CreateRecipeActions.createRecipe,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormRender);
